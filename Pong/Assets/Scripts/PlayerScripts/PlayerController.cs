@@ -28,8 +28,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             rigidBody.velocity = new Vector2(0, 0);
-            rigidBody.drag = 1000;
-            rigidBody.angularDrag = 1000;
+            rigidBody.drag = 500;
+            rigidBody.angularDrag = 500;
         }
     }
 }

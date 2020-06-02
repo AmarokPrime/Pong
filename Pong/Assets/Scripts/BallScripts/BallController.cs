@@ -8,6 +8,8 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rigidBody = GetComponent<Rigidbody2D>();
+
         MoveBallOnSpawn();
     }
 
@@ -19,7 +21,10 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        speed += 0.5f;
+        if (speed <= 20) 
+        {
+            speed += 0.5f;
+        };
     }
 
     private void MoveBallOnSpawn()
@@ -27,8 +32,6 @@ public class BallController : MonoBehaviour
         var directionChoice = Random.Range(0, 20);
         var directionX = Random.Range(2, 10);
         var directionY = Random.Range(2, 10);
-
-        rigidBody = GetComponent<Rigidbody2D>();
 
         if (directionChoice <= 5)
         {
